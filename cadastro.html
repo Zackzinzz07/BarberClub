@@ -1,0 +1,40 @@
+<!-- cadastro.html -->
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | BARBERCLUB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0a0a0a] text-white min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-4xl w-full grid md:grid-cols-2 gap-8 items-center">
+        <div>
+            <h1 class="text-4xl font-bold mb-4 font-oswald text-amber-500">FINALIZAR <br>ADESÃO</h1>
+            <p class="text-gray-500 text-sm mb-8">Você está a um passo da conveniência total. Preencha seus dados para ativar o plano recorrente.</p>
+            
+            <div id="card-plano" class="bg-stone-900 border border-amber-500/20 p-6 rounded-xl">
+                <span id="label-plano" class="text-[10px] uppercase font-bold text-amber-500 tracking-widest">Plano Selecionado</span>
+                <div id="plano-nome" class="text-2xl font-bold mt-1">---</div>
+                <div id="plano-preco" class="text-xl opacity-60">---</div>
+            </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl text-black">
+            <div class="space-y-4">
+                <input type="text" id="nomeCliente" placeholder="Nome Completo" class="w-full p-4 bg-gray-100 rounded-lg outline-none focus:ring-2 ring-amber-500 border-none transition">
+                <input type="email" id="emailCliente" placeholder="Seu melhor e-mail" class="w-full p-4 bg-gray-100 rounded-lg outline-none focus:ring-2 ring-amber-500 border-none transition">
+                <button onclick="finalizarCadastro()" class="w-full bg-black text-white py-4 font-black rounded-lg hover:bg-amber-500 hover:text-black transition shadow-lg">ATIVAR ASSINATURA</button>
+                <p class="text-[10px] text-center text-gray-400 mt-4 italic">Cobrança recorrente mensal. Cancele quando quiser.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
