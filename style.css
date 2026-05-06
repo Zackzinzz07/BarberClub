@@ -1,4 +1,6 @@
-/* style.css - Padrões SÍRUS */
+/* style.css — BARBERCLUB / Sistema SÍRUS */
+
+/* ─── Fontes & Base ─────────────────────────────────── */
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
@@ -7,21 +9,73 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
-/* Transições Suaves para UX Profissional */
-* {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* ─── Transições Globais ────────────────────────────── */
+*, *::before, *::after {
+    transition: background-color 0.3s ease, border-color 0.3s ease,
+                color 0.2s ease, opacity 0.3s ease, transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
-/* Efeito de Vidro (Glassmorphism) para painéis */
+/* ─── Glassmorphism ─────────────────────────────────── */
 .glass {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Estilo para relatórios e tabelas */
-.table-sirus {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 8px;
+/* ─── Tabela Admin ──────────────────────────────────── */
+#tabela-clientes tr {
+    background-color: #111;
+}
+
+#tabela-clientes tr:hover {
+    background-color: #1a1a1a;
+}
+
+#tabela-clientes td {
+    padding: 14px 20px;
+    vertical-align: middle;
+}
+
+/* ─── Badges de Status ──────────────────────────────── */
+.badge-ativo {
+    background-color: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    padding: 2px 10px;
+    border-radius: 9999px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.badge-cancelado {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    padding: 2px 10px;
+    border-radius: 9999px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* ─── Scrollbar Personalizada ───────────────────────── */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f59e0b;
 }
