@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel SÍRUS | BARBERCLUB</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0a0a0a] text-gray-100 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-black border-b border-white/10 px-8 py-4 flex justify-between items-center">
+        <div>
+            <div class="font-oswald text-xl text-amber-500">BARBER<span class="text-white">CLUB</span></div>
+            <div class="text-[10px] text-gray-500 uppercase tracking-widest">Sistema SÍRUS — Painel Admin</div>
+        </div>
+        <div class="flex gap-3">
+            <a href="index.html" class="text-xs border border-white/10 px-4 py-2 rounded hover:bg-white/5 transition uppercase tracking-wider">← Site</a>
+            <button onclick="limparBanco()" class="text-xs border border-red-500/30 text-red-400 px-4 py-2 rounded hover:bg-red-500/10 transition uppercase tracking-wider">Limpar DB</button>
+        </div>
+    </header>
+
+    <!-- Dashboard Cards -->
+    <div class="px-8 pt-10 pb-6 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
+        <div class="bg-stone-900 border border-white/5 p-5 rounded-xl">
+            <div class="text-[10px] uppercase tracking-widest text-gray-500 mb-1">Total Assinantes</div>
+            <div id="stat-total" class="text-3xl font-bold font-oswald text-amber-500">0</div>
+        </div>
+        <div class="bg-stone-900 border border-white/5 p-5 rounded-xl">
+            <div class="text-[10px] uppercase tracking-widest text-gray-500 mb-1">Plano Legendary</div>
+            <div id="stat-legendary" class="text-3xl font-bold font-oswald text-amber-500">0</div>
+        </div>
+        <div class="bg-stone-900 border border-white/5 p-5 rounded-xl">
+            <div class="text-[10px] uppercase tracking-widest text-gray-500 mb-1">Plano Executive</div>
+            <div id="stat-executive" class="text-3xl font-bold font-oswald text-amber-500">0</div>
+        </div>
+        <div class="bg-stone-900 border border-white/5 p-5 rounded-xl">
+            <div class="text-[10px] uppercase tracking-widest text-gray-500 mb-1">Receita Mensal</div>
+            <div id="stat-receita" class="text-3xl font-bold font-oswald text-amber-500">R$ 0</div>
+        </div>
+    </div>
+
+    <!-- Tabela de clientes -->
+    <div class="px-8 pb-16 max-w-7xl mx-auto">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="font-oswald text-lg uppercase tracking-wider text-gray-300">Clientes Cadastrados</h2>
+            <input id="busca" oninput="renderTabela()" type="text" placeholder="Buscar por nome ou e-mail..."
+                class="bg-stone-900 border border-white/10 text-sm text-gray-300 px-4 py-2 rounded-lg outline-none focus:ring-1 ring-amber-500 w-64">
+        </div>
+
+        <div class="overflow-x-auto rounded-xl border border-white/5">
+            <table class="w-full text-sm">
+                <thead class="bg-stone-900 text-[10px] uppercase tracking-widest text-gray-500">
+                    <tr>
+                        <th class="text-left px-5 py-3">ID</th>
+                        <th class="text-left px-5 py-3">Nome</th>
+                        <th class="text-left px-5 py-3">E-mail</th>
+                        <th class="text-left px-5 py-3">Telefone</th>
+                        <th class="text-left px-5 py-3">Plano</th>
+                        <th class="text-left px-5 py-3">Status</th>
+                        <th class="text-left px-5 py-3">Usos Rest.</th>
+                        <th class="text-left px-5 py-3">Data</th>
+                        <th class="text-left px-5 py-3">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-clientes" class="divide-y divide-white/5">
+                    <!-- preenchido por JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <div id="vazio" class="hidden text-center text-gray-600 py-20 text-sm">
+            Nenhum cliente cadastrado ainda.<br>
+            <a href="index.html" class="text-amber-500 hover:underline mt-2 inline-block">← Ir para o site</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', renderAdmin);
+    </script>
+</body>
+</html>
