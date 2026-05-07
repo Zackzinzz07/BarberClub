@@ -15,7 +15,7 @@
 | **Mateus de Oliveira Mota** | mateus.mota@sempreceub.com | 22505243 |
 | **Bruno Henrique Cavalcante Lyra** | bruno.lyra@sempreceub.com | 22505644 |
 | **Iago Lima Gomes** | iago.lima@sempreceub.com | 22505579 |
-| **Isac Freitas** | isac.freitas@sempreceub.com | - |
+| **Isac Freitas** | isac.freitas@sempreceub.com | 22510674 |
 | **Enzo Teles Miranda** | enzo.teles@sempreceub.com | 22510683 |
 
 ---
